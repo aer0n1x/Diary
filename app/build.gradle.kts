@@ -32,6 +32,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
+        @Suppress("DEPRECATION")
         jvmTarget = "11"
     }
     buildFeatures {
@@ -66,4 +67,12 @@ dependencies {
 
     implementation(libs.room)
     ksp(libs.room.compiler)
+
+    implementation(libs.koin.android)
+    implementation(libs.koin.androidx.compose)
+
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.turbine)
+    testImplementation(libs.truth)
 }
